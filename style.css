@@ -284,18 +284,11 @@ main > section {
   font-size: 0.9rem;
 }
 
-.about-copy {
-  max-width: 52rem;
-  font-size: clamp(1.7rem, 4vw, 3.7rem);
-  letter-spacing: -0.07em;
-  line-height: 1.02;
-}
-
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(3rem, 7vw, 7rem);
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 7vw, 6rem);
+  align-items: start;
 }
 
 .about-figure {
@@ -326,15 +319,6 @@ main > section {
   font-weight: 600;
 }
 
-.about-content .section-heading {
-  display: block;
-  margin-bottom: 2rem;
-}
-
-.about-content .section-heading h2 {
-  margin-top: 0.85rem;
-}
-
 .skills-list {
   max-width: 58rem;
   font-size: clamp(1.25rem, 2.6vw, 2rem);
@@ -349,6 +333,84 @@ main > section {
 .skills-list li + li::before {
   content: " / ";
   color: var(--muted);
+}
+
+.about-scroll {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 1.25rem;
+  padding-bottom: 2rem;
+  scrollbar-color: var(--muted) transparent;
+  scrollbar-width: thin;
+}
+
+.about-intro {
+  max-width: 12em;
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.about-meta {
+  margin: 3rem 0 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.about-meta-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-label {
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.about-meta-row strong,
+.about-meta-row div span {
+  display: block;
+}
+
+.about-meta-row strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.about-meta-row div span {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.about-description {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.about-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+
+.about-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.about-scroll::-webkit-scrollbar-thumb {
+  background: var(--muted);
 }
 
 .contact h2 {
@@ -464,6 +526,14 @@ main > section {
   .about-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .about-scroll {
+    aspect-ratio: auto;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
   }
 
   .contact h2 {
