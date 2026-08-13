@@ -291,6 +291,50 @@ main > section {
   line-height: 1.02;
 }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.about-figure {
+  margin: 0;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.about-figure figcaption {
+  display: grid;
+  gap: 0.15rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.about-figure figcaption strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.about-content .section-heading {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.about-content .section-heading h2 {
+  margin-top: 0.85rem;
+}
+
 .skills-list {
   max-width: 58rem;
   font-size: clamp(1.25rem, 2.6vw, 2rem);
@@ -415,6 +459,11 @@ main > section {
   .experience-item {
     grid-template-columns: 1fr;
     gap: 0.4rem;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .contact h2 {
